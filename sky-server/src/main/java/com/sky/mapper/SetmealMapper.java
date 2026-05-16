@@ -73,4 +73,8 @@ public interface SetmealMapper {
     List<DishItemVO> getDishItemBySetmealId(Long setmealId);
 
 
+    /**
+     * 批量删除
+     */
+    void deleteBatch(List<Long> ids);
 }

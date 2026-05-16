@@ -67,6 +67,13 @@
         </where>
     </select>
 
+    <delete id="deleteBatch" parameterType="com.sky.entity.Setmeal">
+        delete from setmeal where id in
+        <foreach collection="ids" open="(" item="id" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
 
     <select id="list" parameterType="Setmeal" resultType="Setmeal">
         select * from setmeal

@@ -71,4 +71,10 @@ public interface DishMapper {
      */
     List<Dish> list(Dish dish);
 
+    /**
+     * 根据套餐id查询该套餐下的所有菜品
+     */
+    @Select("select dish.* from dish left join setmeal_dish on dish.id = setmeal_dish.dish_id where setmeal_dish.setmeal_id = #{id}")
+    List<Dish> getBySetMealId(Long id);
+
 }
